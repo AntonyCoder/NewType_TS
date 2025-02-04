@@ -17,5 +17,5 @@ console.log(avengers.toString());
 
 const cart = new Cart();
 cart.addMovie(avengers);
-cart.showCart();
+cart.movies;
 

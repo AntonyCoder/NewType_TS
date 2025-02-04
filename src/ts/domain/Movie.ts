@@ -18,8 +18,4 @@ export class Movie implements IMovieItem {
         this.genres = genres;
         this.duration = duration;
     }
-
-    toString(): string {
-        return `${this.title} (${this.originalTitle})\nГод: ${this.year}\nСтрана: ${this.country}\nСлоган: ${this.slogan}\nЖанр: ${this.genres.join(', ')}\nВремя: ${this.duration} мин.`;
-    }
 }

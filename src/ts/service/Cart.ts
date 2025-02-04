@@ -7,10 +7,7 @@ export default class Cart {
         this.movie.push(item);
     }
 
-    showCart(): void {
-        console.log("Корзина:")
-        this.movie.forEach(item => {
-            console.log(`${item.title} (${item.year})`)
-        })
+    get movies(): IMovieItem[] {
+        return [...this.movie]
     }
 }
