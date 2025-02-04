@@ -1,11 +1,21 @@
 import Cart from './service/Cart';
-import Book from './domain/Book';
-import MusicAlbum from './domain/MusicAlbum';
+import { Movie } from './domain/Movie';
+import { IMovieItem } from './domain/types';
+
+// Пример использования
+const avengers: IMovieItem = new Movie(
+    "Мстители", 
+    "The Avengers", 
+    2012, 
+    "США", 
+    "Avengers Assemble!", 
+    ["фантастика", "боевик", "фэнтези", "приключения"], 
+    137
+);
+
+console.log(avengers.toString());
 
 const cart = new Cart();
-console.log(cart.items);
+cart.addMovie(avengers);
+cart.showCart();
 
-cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
-cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
-
-console.log(cart.items);

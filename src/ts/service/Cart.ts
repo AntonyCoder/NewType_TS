@@ -1,13 +1,16 @@
-import Buyable from '../domain/Buyable';
+import { IMovieItem } from '../domain/types';
 
 export default class Cart {
-    private _items: Buyable[] = [];
+    private movie: IMovieItem[] = [];
 
-    add(item: Buyable): void {
-        this._items.push(item);
+    addMovie(item: IMovieItem): void {
+        this.movie.push(item);
     }
 
-    get items(): Buyable[] {
-        return [...this._items]; 
+    showCart(): void {
+        console.log("Корзина:")
+        this.movie.forEach(item => {
+            console.log(`${item.title} (${item.year})`)
+        })
     }
 }
